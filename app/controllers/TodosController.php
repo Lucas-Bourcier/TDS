@@ -4,26 +4,50 @@ use Ajax\JsUtils;
 use Ubiquity\attributes\items\router\Post;
 use Ubiquity\attributes\items\router\Get;
 use Ubiquity\attributes\items\router\Route;
- /**
+use Ubiquity\controllers\Router;
+use Ubiquity\utils\http\URequest;
+use Ubiquity\utils\http\USession;
+
+/**
   * Controller TodosController
   * @Property JsUtils $jquery
   */
+#[Route('/todos/')]
 class TodosController extends \controllers\ControllerBase{
 
+    const CACHE_KEY = 'datas/lists/';
+    const EMPTY_LIST_ID='not saved';
+    const LIST_SESSION_KEY='list';
+    const ACTIVE_LIST_SESSION_KEY='active-list';
+
+    #[Route(path: '#/_default',name: "home")]
 	public function index(){
+
+        $list=USession::get('list',[]);
+        $list=USession::set(self::ACTIVE_LIST_SESSION_KEY,[]);
+        if(USession::exists(self::ACTIVE_LIST_SESSION_KEY)){
+        }
+
+        if($list!=null){
+            echo "Cette liste n'est pas vide";
+        }else{
+            echo "Cette liste est vide";
+        }
+
+        $this->jquery->getHref('a','',['hasLoader'=>false,'historize'=>false]);
 		$this->loadView("TodosController/index.html");
+      //  $this->renderView('todosController/index.html', ['list'=>$list]);
 	}
 
-	#[Post(path: "todos/add/",name: "todos.add")]
+	#[Get(path: "add",name: "todos.add")]
 	public function addElement(){
-        $this->jquery->PostFormOnClick('button',Router::path('todos.addElement'),'#addElement','_element',['hasLoader'=>'internal']);
-        $this->jquery->renderView('todosController/addElement.html');
-		$this->loadView('todosController/addElement.html');
 
+        $this->jquery->postFormOnClick('button',Router::path('todos.loadListFromForm'),'addElement','._content',['hasLoader'=>'internal']);
+        $this->jquery->renderView('todosController/addElement.html');
 	}
 
 
-	#[Get(path: "todos/delete/{index}",name: "todos.delete")]
+	#[Get(path: "delete/{index}",name: "todos.delete")]
 	public function deleteElement($index){
 		
 		$this->loadView('TodosController/deleteElement.html');
@@ -31,7 +55,7 @@ class TodosController extends \controllers\ControllerBase{
 	}
 
 
-	#[Get(path: "todos/edit/{index}",name: "todos.edit")]
+	#[Get(path: "edit/{index}",name: "todos.edit")]
 	public function editElement($index){
 		
 		$this->loadView('TodosController/editElement.html');
@@ -39,7 +63,7 @@ class TodosController extends \controllers\ControllerBase{
 	}
 
 
-	#[Get(path: "Todos/loadList/{uniqid}",name: "todos.loadList")]
+	#[Get(path: "loadList/{uniqid}",name: "todos.loadList")]
 	public function loadList($uniqid){
 		
 		$this->loadView('TodosController/loadList.html');
@@ -47,23 +71,22 @@ class TodosController extends \controllers\ControllerBase{
 	}
 
 
-	#[Post(path: "Todos/loadList/",name: "todos.loadListPost")]
+	#[Post(path: "loadList/",name: "todos.loadListPost")]
 	public function loadListFromForm(){
-		
-		$this->loadView('TodosController/loadListFromForm.html');
-
+        $list=USession::addValueToArray('list', URequest::post('items'));
+        echo "listes ajoutées";
 	}
 
 
-	#[Get(path: "todos/newList/{force}",name: "todos.new")]
-	public function newList($force){
-		
+	#[Get(path: "newList/{force}",name: "todos.new")]
+	public function newList($force=false){
+
 		$this->loadView('TodosController/newList.html');
 
 	}
 
 
-	#[Route(path: "todos./{url}",name: "todosControler-p404")]
+	#[Route(path: "{url}",name: "todosController-p404")]
 	public function p404($url){
 		
 		$this->loadView('TodosController/p404.html');
@@ -71,10 +94,18 @@ class TodosController extends \controllers\ControllerBase{
 	}
 
 
-	#[Get(path: "todos/saveList",name: "todos.save")]
+	#[Get(path: "saveList",name: "todos.save")]
 	public function saveList(){
 		
 		$this->loadView('TodosController/saveList.html');
+
+	}
+
+
+	#[Route(path: "formulaire",name: "todos.elementForm")]
+	public function elementForm(){
+		
+		$this->loadView('TodosController/elementForm.html');
 
 	}
 

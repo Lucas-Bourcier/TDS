@@ -14,4 +14,10 @@
 </head>
 <body>
 {% block head %}
+<div class="ui container">
+	<div class="ui menu">
+		<a class="item" href="{{path('_default')}}" data-target="_content">Home</a>
+		<a class="item" href="{{path('todos.add')}}" data-target="_content">Ajouter</a>
+	</div>
+</div>
 {% endblock %}
