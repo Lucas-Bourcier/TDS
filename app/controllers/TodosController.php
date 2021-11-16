@@ -36,13 +36,13 @@ class TodosController extends \controllers\ControllerBase{
 
         $this->jquery->getHref('a','',['hasLoader'=>false,'historize'=>false]);
 		$this->loadView("TodosController/index.html");
-      //  $this->renderView('todosController/index.html', ['list'=>$list]);
+     //   $this->renderView('todosController/index.html', ['list'=>$list]);
 	}
 
 	#[Get(path: "add",name: "todos.add")]
 	public function addElement(){
 
-        $this->jquery->postFormOnClick('button',Router::path('todos.loadListFromForm'),'addElement','._content',['hasLoader'=>'internal']);
+        $this->jquery->postFormOnClick('button',Router::path('todos.loadListPost'),'addElement','._content',['hasLoader'=>'internal']);
         $this->jquery->renderView('todosController/addElement.html');
 	}
 
