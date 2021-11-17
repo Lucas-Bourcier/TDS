@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-{% block header %}
+	{% block header %}
 	<base href="{{config["siteUrl"]}}">
 	<meta charset="UTF-8">
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 	<title>tds</title>
-{% endblock %}
-{% block css %}
+	{% endblock %}
+	{% block css %}
 	{{ css('https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css') }}
 	{{css('css/style.css')}}
-{% endblock %}
+	{% endblock %}
 </head>
 <body>
 {% block head %}
 <div class="ui container">
-	<div class="ui menu">
-		<a class="item" href="{{path('_default')}}" data-target="_content">Home</a>
-		<a class="item" href="{{path('todos.add')}}" data-target="_content">Ajouter</a>
+
+	<div class="ui fluid menu">
+		<a class="item" href="{{path('home')}}" data-target="._content"><i class="home icon"></i>voir les listes</a>
+
+		<div class="item right floated">
+			{{ _userInfo|raw }}</div>
 	</div>
-</div>
-{% endblock %}
+	{% endblock %}

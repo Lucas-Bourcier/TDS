@@ -1,9 +1,15 @@
-<div data-target="_content">
-    <form id="addElement" class="ui form">
-        <div class="ui input">
-                <input type="text" name="items" placeholder="items">
+<form class="ui form" id="frm">
+    <div class="ui inverted segment">
+        <div class="ui inverted input">
+        <br></br>
+        <input type="text" name="items" placeholder="items">
+    </div>
+    <br></br>
+        <div class="ui inverted divider"></div>
+        <div class="ui inverted left icon input">
+    <button class="ui loading button">Confirmer</button>
         </div>
-        <button class="ui fluid button">Valider</button>
-    </form>
-</div>
-{{ script_foot | raw }}
+    </div>
+    </div>
+</form>
+{{script_foot | raw}}
