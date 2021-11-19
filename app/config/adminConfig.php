@@ -1,9 +1,7 @@
 <?php
 return array(
 	"devtools-path"=>"Ubiquity",
-	"info"=>[
-			"controllers"
-			],
+	"info"=>[],
 	"display-cache-types"=>[
 			"controllers",
 			"models"
@@ -57,7 +55,8 @@ return array(
 			"translate",
 			"themes",
 			"maintenance",
-			"composer"
+			"composer",
+			"logs"
 			],
 	"style"=>"inverted"
 	);

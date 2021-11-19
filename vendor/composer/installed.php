@@ -94,12 +94,12 @@
             'dev_requirement' => true,
         ),
         'phpmv/ubiquity-webtools' => array(
-            'pretty_version' => '2.4.11',
-            'version' => '2.4.11.0',
+            'pretty_version' => '2.4.12',
+            'version' => '2.4.12.0',
             'type' => 'extension',
             'install_path' => __DIR__ . '/../phpmv/ubiquity-webtools',
             'aliases' => array(),
-            'reference' => '3ea115c33d4e044e2e8c301d418a8a6b5a6d7e1f',
+            'reference' => 'fbed11a5a3118b6012bac27005418b2515d971d2',
             'dev_requirement' => true,
         ),
         'prismjs/prism' => array(
