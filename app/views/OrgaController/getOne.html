@@ -1,2 +1,29 @@
-{{ q['frm-getOne'] | raw }}
-{{ script_foot | raw }}
+{%  extends "OrgaController/base.html" %}
+{% block header %}
+<a href="{{ path('orga.index') }}" data-target="body"  class="ui basic inverted button">
+    <i class="factory icon"></i>Organisations
+</a>
+{% endblock %}
+{% block body %}
+{{ parent() }}
+<div class="ui inverted attached segment">
+    <a href="{{ path('orga.index') }}" data-target="body"  class="ui basic inverted button">
+        <i class="factory icon"></i>Test
+    </a>
+</div>
+<div class="ui attached segment">
+    <div class="ui equal width grid">
+
+        <div class="column">
+            <h1>a</h1>
+            <div class="ui list">
+                <div class="item">{{% for user in byId.user %}}</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h1>a</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}

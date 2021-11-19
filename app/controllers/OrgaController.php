@@ -57,12 +57,7 @@ class OrgaController extends \controllers\ControllerBase{
 	#[Get(path: "/orgas/{id}",name: "orgas.getOne")]
 	public function getOne($id){
 
-        $orga=$this->repo->byId($id,false);
-        $df=$this->jquery->semantic()->dataForm('frm-getOne',$orga);
-        $df->setActionTarget(Router::path('orgas.getOne'),'');
-        $df->setProperty('method','get');
-        $df->setFields('id','name','groups','user');
-        $df->setCaptions('','nom','Groupes','Utilisateurs');
+        $orga=$this->repo->byId($id);
         $this->jquery->renderView('OrgaController/getOne.html');
 	}
 
