@@ -4,11 +4,11 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4d348915ce20b775ea6c14de19866cc2
+class ComposerStaticInitc15f2fb0eb28549545f45211c1a9e8a7
 {
     public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -42,8 +42,8 @@ class ComposerStaticInit4d348915ce20b775ea6c14de19866cc2
     public static $prefixDirsPsr4 = array (
         'Ubiquity\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpmv/ubiquity/src/Ubiquity',
-            1 => __DIR__ . '/..' . '/phpmv/ubiquity-attributes/src/Ubiquity',
+            0 => __DIR__ . '/..' . '/phpmv/ubiquity-attributes/src/Ubiquity',
+            1 => __DIR__ . '/..' . '/phpmv/ubiquity/src/Ubiquity',
             2 => __DIR__ . '/..' . '/phpmv/ubiquity-debug/src/Ubiquity',
             3 => __DIR__ . '/..' . '/phpmv/ubiquity-dev/src/Ubiquity',
             4 => __DIR__ . '/..' . '/phpmv/ubiquity-webtools/src/Ubiquity',
@@ -88,10 +88,10 @@ class ComposerStaticInit4d348915ce20b775ea6c14de19866cc2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4d348915ce20b775ea6c14de19866cc2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4d348915ce20b775ea6c14de19866cc2::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit4d348915ce20b775ea6c14de19866cc2::$fallbackDirsPsr4;
-            $loader->classMap = ComposerStaticInit4d348915ce20b775ea6c14de19866cc2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc15f2fb0eb28549545f45211c1a9e8a7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc15f2fb0eb28549545f45211c1a9e8a7::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitc15f2fb0eb28549545f45211c1a9e8a7::$fallbackDirsPsr4;
+            $loader->classMap = ComposerStaticInitc15f2fb0eb28549545f45211c1a9e8a7::$classMap;
 
         }, null, ClassLoader::class);
     }
