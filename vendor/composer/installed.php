@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2b358152817ff53d158ccc69a48d783e91a587a3',
+        'reference' => '9eea3fda32b56021d13fe33777f1926e0c08a275',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2b358152817ff53d158ccc69a48d783e91a587a3',
+            'reference' => '9eea3fda32b56021d13fe33777f1926e0c08a275',
             'dev_requirement' => false,
         ),
         'czproject/git-php' => array(

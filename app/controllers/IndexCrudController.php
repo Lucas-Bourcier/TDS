@@ -10,7 +10,7 @@ use controllers\crud\files\IndexCrudControllerFiles;
 use Ubiquity\controllers\crud\CRUDFiles;
 use Ubiquity\attributes\items\router\Route;
 
-#[Route(path: "/{resource}",inherited: true,automated: true)]
+#[Route(path: "/user/{resource}",inherited: true,automated: true)]
 class IndexCrudController extends \Ubiquity\controllers\crud\MultiResourceCRUDController{
 
 	#[Route(name: "crud.index",priority: -1)]
@@ -19,7 +19,7 @@ class IndexCrudController extends \Ubiquity\controllers\crud\MultiResourceCRUDCo
 	}
 
 
-	#[Route(path: "#//home",name: "crud.home",priority: 100)]
+	#[Route(path: "#//user/home",name: "crud.home",priority: 100)]
 	public function home(){
 		parent::home();
 	}
@@ -29,7 +29,7 @@ class IndexCrudController extends \Ubiquity\controllers\crud\MultiResourceCRUDCo
 	}
 	
 	public function _getBaseRoute():string {
-		return "/".$this->resource."";
+		return "/user/".$this->resource."";
 	}
 	
 	protected function getAdminData(): CRUDDatas{

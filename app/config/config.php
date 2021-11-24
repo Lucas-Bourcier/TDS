@@ -11,7 +11,7 @@ return array(
 			"options"=>[],
 			"cache"=>false
 			],
-	"sessionName"=>"s619e0cf83abdd",
+	"sessionName"=>"s619e114433f25",
 	"namespaces"=>[],
 	"templateEngine"=>"Ubiquity\\views\\engine\\Twig",
 	"templateEngineOptions"=>[
@@ -23,7 +23,7 @@ return array(
         return new \Ubiquity\log\libraries\UMonolog(array (
   'host' => '127.0.0.1',
   'port' => 8090,
-  'sessionName' => 's619e0cf83abdd',
+  'sessionName' => 's619e114433f25',
 )['sessionName'], \Monolog\Logger::INFO);
     },
 	"di"=>[

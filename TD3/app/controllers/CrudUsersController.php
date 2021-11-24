@@ -16,8 +16,8 @@ class CrudUsersController extends \Ubiquity\controllers\crud\CRUDController{
 	public function __construct(){
 		parent::__construct();
 		\Ubiquity\orm\DAO::start();
-		$this->model='models\\group';
-		$this->style='inverted';
+		$this->model='models\\User';
+		$this->style='';
 	}
 
 	public function _getBaseRoute() {
