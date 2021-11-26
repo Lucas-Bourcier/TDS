@@ -1,6 +1,7 @@
 <?php
 namespace controllers;
 
+use Ubiquity\attributes\items\router\Route;
 use Ubiquity\core\postinstall\Display;
 use Ubiquity\log\Logger;
 use Ubiquity\themes\ThemesManager;
@@ -8,6 +9,7 @@ use Ubiquity\themes\ThemesManager;
 /**
  * Controller IndexController
  */
+
 class IndexController extends ControllerBase {
 
 	public function index() {

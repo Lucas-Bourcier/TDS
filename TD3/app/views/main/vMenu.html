@@ -1,14 +1,4 @@
-<div class="head">
-	<div class="ui container">
-		<div class="ui pointing inverted menu">
-		  <div class="header item">
-		    Themes
-		  </div>
-		  {% for theme in themes %}
-		  <a class="item {{ activeTheme==theme ? 'active' }}" href="IndexController/ct/{{theme}}">
-		    {{theme}}
-		  </a>
-		  {% endfor %}
-		</div>
-	</div>
-</div>
+<a href="{{ path('new.user') }}" class="ui basic olive button" data-target="#new-user">
+	<i class="plus icon"></i> Ajouter un utilisateur...
+</a>
+<div id="new-user" style="margin-top: 3px"></div>

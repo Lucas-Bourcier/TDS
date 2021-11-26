@@ -3,12 +3,12 @@ namespace controllers\crud\datas;
 
 use Ubiquity\controllers\crud\CRUDDatas;
  /**
-  * Class CrudUsersControllerDatas
+  * Class CrudGroupsControllerDatas
   */
-class CrudUsersControllerDatas extends CRUDDatas{
+class CrudGroupsControllerDatas extends CRUDDatas{
 
     public function getFieldNames($model)
     {
-        return  ['firstName', 'lastName','Email','suspended'];
+        return  ['name', 'email','aliases'];
     }
 }
