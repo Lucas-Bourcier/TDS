@@ -1,2 +1,0 @@
-<?php
-return array("id"=>[["type"=>"id","constraints"=>["autoinc"=>true]]],"firstname"=>[["type"=>"length","constraints"=>["max"=>65,"notNull"=>true]]],"lastname"=>[["type"=>"length","constraints"=>["max"=>65,"notNull"=>true]]],"email"=>[["type"=>"email","constraints"=>["notNull"=>true]],["type"=>"length","constraints"=>["max"=>255]]],"password"=>[["type"=>"length","constraints"=>["max"=>255]]],"suspended"=>[["type"=>"isBool","constraints"=>[]]]);
